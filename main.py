@@ -7,6 +7,8 @@ deterministic: the same poem every run.
 
 import os
 
+OUTPUT_PATH = "/output/entry.txt"
+
 POEM = (
     "\u201cMay I?\u201d \u2014 two small words,\n"
     "and the whole house opens.\n"
@@ -19,8 +21,8 @@ POEM = (
 
 
 def main() -> None:
-    os.makedirs("/output", exist_ok=True)
-    with open("/output/entry.txt", "w", encoding="utf-8") as f:
+    os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
+    with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         f.write(POEM)
 
 
